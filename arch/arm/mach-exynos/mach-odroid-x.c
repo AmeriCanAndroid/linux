@@ -742,7 +742,7 @@ struct max77686_opmode_data max77686_opmode_data[MAX77686_REG_MAX] = {
 	[MAX77686_BUCK4] = {MAX77686_BUCK4, MAX77686_OPMODE_STANDBY},
 };
 
-static struct max77686_regulator_data max77686_regulators[] = {
+static struct max77686_regulator_data max77686_regs[] = {
 	{ MAX77686_LDO1,	&max77686_ldo1_data },
 	{ MAX77686_LDO2,	&max77686_ldo2_data },
 	{ MAX77686_LDO3,	&max77686_ldo3_data },
@@ -782,8 +782,8 @@ static struct max77686_regulator_data max77686_regulators[] = {
 };
 
 static struct max77686_platform_data hkdk4412_max77686_info = {
-	.num_regulators	= ARRAY_SIZE(max77686_regulators),
-	.regulators	= max77686_regulators,
+	.num_regulators	= ARRAY_SIZE(max77686_regs),
+	.regulators	= max77686_regs,
 	.irq_gpio	= 0,
 	.wakeup		= 0,
 
