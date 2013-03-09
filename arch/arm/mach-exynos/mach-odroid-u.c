@@ -1206,7 +1206,7 @@ static void __init odroid_u2_machine_init(void)
 	platform_add_devices(odroid_u2_devices, ARRAY_SIZE(odroid_u2_devices));
 }
 
-MACHINE_START(ODROID_4X12, "ODROIDU2")
+MACHINE_START(SMDK4412, "ODROIDU2")
 	/* Maintainer: Dongjin Kim <dongjin.kim@agreeyamobiity.net> */
 	.atag_offset	= 0x100,
 	.smp		= smp_ops(exynos_smp_ops),
