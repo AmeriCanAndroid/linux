@@ -74,6 +74,16 @@ static void __iomem *scu_base_addr(void)
 
 static DEFINE_SPINLOCK(boot_lock);
 
+static void enable_foz(void)
+{
+        u32 val;
+                asm volatile(
+                "mrc    p15, 0, %0, c1, c0, 1\n"
+                "orr    %0, %0, #(1 << 3)\n"
+                "mcr    p15, 0, %0, c1, c0, 1"
+                : "=r" (val));
+}
+
 static void __cpuinit exynos_secondary_init(unsigned int cpu)
 {
 	/*
@@ -88,6 +98,14 @@ static void __cpuinit exynos_secondary_init(unsigned int cpu)
 	 * pen, then head off into the C entry point
 	 */
 	write_pen_release(-1);
+
+	/*
+	 * Enable write full line for zeros mode
+	 */
+	if(soc_is_exynos4210() | soc_is_exynos4212() | soc_is_exynos4412()) {
+		enable_foz();
+		smp_call_function((void (*)(void *)) enable_foz, NULL, 0);
+	}
 
 	/*
 	 * Synchronise with the boot thread.
