@@ -134,6 +134,7 @@ static struct regulator_consumer_supply __initdata max77686_ldo5_consumer[] = {
 static struct regulator_consumer_supply __initdata max77686_ldo8_consumer[] = {
 	REGULATOR_SUPPLY("vdd", "exynos4-hdmi"),        /* HDMI */
 	REGULATOR_SUPPLY("vdd_pll", "exynos4-hdmi"),    /* HDMI */
+	REGULATOR_SUPPLY("vusb_d", "s3c-hsotg"),
 };
 
 static struct regulator_consumer_supply __initdata max77686_ldo10_consumer[] = {
