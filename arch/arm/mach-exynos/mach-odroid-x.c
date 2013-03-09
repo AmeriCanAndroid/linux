@@ -72,7 +72,7 @@ extern void exynos4_setup_dwmci_cfg_gpio(struct platform_device *dev, int width)
 				 S5PV210_UFCON_TXTRIG4 |	\
 				 S5PV210_UFCON_RXTRIG4)
 
-static struct s3c2410_uartcfg hkdk4412_uartcfgs[] __initdata = {
+static struct s3c2410_uartcfg hkdk4412_uartcfgs[]  = {
 	[0] = {
 		.hwport		= 0,
 		.flags		= 0,
@@ -103,80 +103,80 @@ static struct s3c2410_uartcfg hkdk4412_uartcfgs[] __initdata = {
 	},
 };
 
-static struct regulator_consumer_supply __initdata max77686_buck1_consumer[] = {
+static struct regulator_consumer_supply max77686_buck1_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_buck2_consumer[] = {
+static struct regulator_consumer_supply  max77686_buck2_consumer[] = {
 	REGULATOR_SUPPLY("vdd_arm", NULL),	/* CPUFREQ */
 };
 
-static struct regulator_consumer_supply __initdata max77686_buck3_consumer[] = {
+static struct regulator_consumer_supply  max77686_buck3_consumer[] = {
 	REGULATOR_SUPPLY("vdd_int", NULL),	/* CPUFREQ */
 };
 
-static struct regulator_consumer_supply __initdata max77686_buck4_consumer[] = {
+static struct regulator_consumer_supply  max77686_buck4_consumer[] = {
 	REGULATOR_SUPPLY("vdd_g3d", "mali_drm"),	/* G3D */
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo1_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo1_consumer[] = {
 	REGULATOR_SUPPLY("vdd_alive", NULL),	/* ALIVE */
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo3_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo3_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo4_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo4_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo5_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo5_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo8_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo8_consumer[] = {
 	REGULATOR_SUPPLY("vdd", "exynos4-hdmi"),        /* HDMI */
 	REGULATOR_SUPPLY("vdd_pll", "exynos4-hdmi"),    /* HDMI */
 	REGULATOR_SUPPLY("vusb_d", "s3c-hsotg"),
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo10_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo10_consumer[] = {
 	REGULATOR_SUPPLY("vdd_osc", "exynos4-hdmi"),    /* HDMI */
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo11_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo11_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo13_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo13_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo14_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo14_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo17_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo17_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo18_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo18_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo19_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo19_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo21_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo21_consumer[] = {
 	REGULATOR_SUPPLY("vqmmc", "exynos4-sdhci.2"),
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo23_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo23_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo24_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo24_consumer[] = {
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo25_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo25_consumer[] = {
 	REGULATOR_SUPPLY("vddq_lcd", "platform-lcd"),
 };
 
-static struct regulator_consumer_supply __initdata max77686_ldo26_consumer[] = {
+static struct regulator_consumer_supply  max77686_ldo26_consumer[] = {
 };
 
-static struct regulator_init_data __initdata max77686_buck1_data = {
+static struct regulator_init_data  max77686_buck1_data = {
 	.constraints = {
 		.name		= "VDD_MIF_1.0V",
 		.min_uV		= 800000,
@@ -190,7 +190,7 @@ static struct regulator_init_data __initdata max77686_buck1_data = {
 	.consumer_supplies = max77686_buck1_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_buck2_data = {
+static struct regulator_init_data  max77686_buck2_data = {
 	.constraints = {
 		.name		= "VDD_ARM_1.3V",
 		.min_uV		= 800000,
@@ -203,7 +203,7 @@ static struct regulator_init_data __initdata max77686_buck2_data = {
 	.consumer_supplies = max77686_buck2_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_buck3_data = {
+static struct regulator_init_data  max77686_buck3_data = {
 	.constraints = {
 		.name		= "VDD_INT_1.0V",
 		.min_uV		= 800000,
@@ -216,7 +216,7 @@ static struct regulator_init_data __initdata max77686_buck3_data = {
 	.consumer_supplies = max77686_buck3_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_buck4_data = {
+static struct regulator_init_data  max77686_buck4_data = {
 	.constraints = {
 		.name		= "VDD_G3D_1.0V",
 		.min_uV		= 850000,
@@ -232,7 +232,7 @@ static struct regulator_init_data __initdata max77686_buck4_data = {
 	.consumer_supplies = max77686_buck4_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_buck5_data = {
+static struct regulator_init_data  max77686_buck5_data = {
 	.constraints = {
 		.name		= "VDDQ_CKEM1M2_1.2V",
 		.min_uV		= 1200000,
@@ -248,7 +248,7 @@ static struct regulator_init_data __initdata max77686_buck5_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_buck6_data = {
+static struct regulator_init_data  max77686_buck6_data = {
 	.constraints = {
 		.name		= "VDD_INL_1.35V",
 		.min_uV		= 1350000,
@@ -264,7 +264,7 @@ static struct regulator_init_data __initdata max77686_buck6_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_buck7_data = {
+static struct regulator_init_data  max77686_buck7_data = {
 	.constraints = {
 		.name		= "VDD_INL_2.0V",
 		.min_uV		= 2000000,
@@ -280,7 +280,7 @@ static struct regulator_init_data __initdata max77686_buck7_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_buck8_data = {
+static struct regulator_init_data  max77686_buck8_data = {
 	.constraints = {
 		.name		= "VDD_BUCK8_2.8V",
 		.min_uV		= 2800000,
@@ -296,7 +296,7 @@ static struct regulator_init_data __initdata max77686_buck8_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_buck9_data = {
+static struct regulator_init_data  max77686_buck9_data = {
 	.constraints = {
 		.name		= "VDD_BUCK9_1.2V",
 		.min_uV		= 1200000,
@@ -312,7 +312,7 @@ static struct regulator_init_data __initdata max77686_buck9_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo1_data = {
+static struct regulator_init_data  max77686_ldo1_data = {
 	.constraints = {
 		.name		= "VDD_ALIVE_1.0V",
 		.min_uV		= 1000000,
@@ -329,7 +329,7 @@ static struct regulator_init_data __initdata max77686_ldo1_data = {
 	.consumer_supplies = max77686_ldo1_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo2_data = {
+static struct regulator_init_data  max77686_ldo2_data = {
 	.constraints = {
 		.name		= "VDDQ_M1M2_1.8V",
 		.min_uV		= 1800000,
@@ -344,7 +344,7 @@ static struct regulator_init_data __initdata max77686_ldo2_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo3_data = {
+static struct regulator_init_data  max77686_ldo3_data = {
 	.constraints = {
 		.name		= "VDDQ_M0_1.8V",
 		.min_uV		= 1800000,
@@ -361,7 +361,7 @@ static struct regulator_init_data __initdata max77686_ldo3_data = {
 	.consumer_supplies = max77686_ldo3_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo4_data = {
+static struct regulator_init_data  max77686_ldo4_data = {
 	.constraints = {
 		.name		= "VDDQ_MMC2_2.8V",
 		.min_uV		= 2800000,
@@ -378,7 +378,7 @@ static struct regulator_init_data __initdata max77686_ldo4_data = {
 	.consumer_supplies = max77686_ldo4_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo5_data = {
+static struct regulator_init_data  max77686_ldo5_data = {
 	.constraints = {
 		.name		= "VDDQ_MMC13_1V8",
 		.min_uV		= 1800000,
@@ -395,7 +395,7 @@ static struct regulator_init_data __initdata max77686_ldo5_data = {
 	.consumer_supplies = max77686_ldo5_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo6_data = {
+static struct regulator_init_data  max77686_ldo6_data = {
 	.constraints = {
 		.name		= "VDD_MPLL_1.0V",
 		.min_uV		= 1000000,
@@ -410,7 +410,7 @@ static struct regulator_init_data __initdata max77686_ldo6_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo7_data = {
+static struct regulator_init_data  max77686_ldo7_data = {
 	.constraints = {
 		.name		= "VDD_VPLL_1.0V",
 		.min_uV		= 1000000,
@@ -425,7 +425,7 @@ static struct regulator_init_data __initdata max77686_ldo7_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo8_data = {
+static struct regulator_init_data  max77686_ldo8_data = {
 	.constraints = {
 		.name		= "VDD10_HDMI_1.0V",
 		.min_uV		= 1000000,
@@ -442,7 +442,7 @@ static struct regulator_init_data __initdata max77686_ldo8_data = {
 	.consumer_supplies = max77686_ldo8_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo9_data = {
+static struct regulator_init_data  max77686_ldo9_data = {
 	.constraints = {
 		.name		= "VDD_VTCORE_1.0V",
 		.min_uV		= 1000000,
@@ -457,7 +457,7 @@ static struct regulator_init_data __initdata max77686_ldo9_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo10_data = {
+static struct regulator_init_data  max77686_ldo10_data = {
 	.constraints = {
 		.name		= "VDDQ_MIPIHSI_1.8V",
 		.min_uV		= 1800000,
@@ -474,7 +474,7 @@ static struct regulator_init_data __initdata max77686_ldo10_data = {
 	.consumer_supplies = max77686_ldo10_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo11_data = {
+static struct regulator_init_data  max77686_ldo11_data = {
 	.constraints = {
 		.name		= "VDD18_ABB1_1.8V",
 		.min_uV		= 1800000,
@@ -490,7 +490,7 @@ static struct regulator_init_data __initdata max77686_ldo11_data = {
 	.consumer_supplies	= max77686_ldo11_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo12_data = {
+static struct regulator_init_data  max77686_ldo12_data = {
 	.constraints = {
 		.name		= "VDD33_UOTG_3.3V",
 		.min_uV		= 3300000,
@@ -505,7 +505,7 @@ static struct regulator_init_data __initdata max77686_ldo12_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo13_data = {
+static struct regulator_init_data  max77686_ldo13_data = {
 	.constraints = {
 		.name		= "VDDQ_C2C_1.8V",
 		.min_uV		= 1800000,
@@ -522,7 +522,7 @@ static struct regulator_init_data __initdata max77686_ldo13_data = {
 	.consumer_supplies = max77686_ldo13_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo14_data = {
+static struct regulator_init_data  max77686_ldo14_data = {
 	.constraints = {
 		.name		= "VDD18_ABB2_1.8V",
 		.min_uV		= 1800000,
@@ -538,7 +538,7 @@ static struct regulator_init_data __initdata max77686_ldo14_data = {
 	.consumer_supplies	= max77686_ldo14_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo15_data = {
+static struct regulator_init_data  max77686_ldo15_data = {
 	.constraints = {
 		.name		= "VDD10_HSIC_1.0V",
 		.min_uV		= 1000000,
@@ -553,7 +553,7 @@ static struct regulator_init_data __initdata max77686_ldo15_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo16_data = {
+static struct regulator_init_data  max77686_ldo16_data = {
 	.constraints = {
 		.name		= "VDD18_HSIC_1.8V",
 		.min_uV		= 1800000,
@@ -568,7 +568,7 @@ static struct regulator_init_data __initdata max77686_ldo16_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo17_data = {
+static struct regulator_init_data  max77686_ldo17_data = {
 	.constraints = {
 		.name		= "VDDQ_CAM_1.8V",
 		.min_uV		= 1800000,
@@ -585,7 +585,7 @@ static struct regulator_init_data __initdata max77686_ldo17_data = {
 	.consumer_supplies = max77686_ldo17_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo18_data = {
+static struct regulator_init_data  max77686_ldo18_data = {
 	.constraints = {
 		.name		= "VDD_LDO18_1.8V",
 		.min_uV		= 1800000,
@@ -602,7 +602,7 @@ static struct regulator_init_data __initdata max77686_ldo18_data = {
 	.consumer_supplies = max77686_ldo18_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo19_data = {
+static struct regulator_init_data  max77686_ldo19_data = {
 	.constraints = {
 		.name		= "VDD_VTCAM_1.8V",
 		.min_uV		= 1800000,
@@ -620,7 +620,7 @@ static struct regulator_init_data __initdata max77686_ldo19_data = {
 	.consumer_supplies = max77686_ldo19_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo20_data = {
+static struct regulator_init_data  max77686_ldo20_data = {
 	.constraints = {
 		.name		= "VDD_LDO20_1V8",
 		.min_uV		= 1800000,
@@ -635,7 +635,7 @@ static struct regulator_init_data __initdata max77686_ldo20_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo21_data = {
+static struct regulator_init_data  max77686_ldo21_data = {
 	.constraints = {
 		.name		= "VDD_SDCARD_3.3V",
 		.min_uV		= 3300000,
@@ -652,7 +652,7 @@ static struct regulator_init_data __initdata max77686_ldo21_data = {
 	.consumer_supplies = max77686_ldo21_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo22_data = {
+static struct regulator_init_data  max77686_ldo22_data = {
 	.constraints = {
 		.name		= "VDD_LDO22_2.8V",
 		.min_uV		= 2800000,
@@ -667,7 +667,7 @@ static struct regulator_init_data __initdata max77686_ldo22_data = {
 	},
 };
 
-static struct regulator_init_data __initdata max77686_ldo23_data = {
+static struct regulator_init_data  max77686_ldo23_data = {
 	.constraints = {
 		.name		= "VDD_TOUCH_2.8V",
 		.min_uV		= 2800000,
@@ -684,7 +684,7 @@ static struct regulator_init_data __initdata max77686_ldo23_data = {
 	.consumer_supplies = max77686_ldo23_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo24_data = {
+static struct regulator_init_data  max77686_ldo24_data = {
 	.constraints = {
 		.name		= "VDD_TOUCHLED_3.3V",
 		.min_uV		= 3300000,
@@ -701,7 +701,7 @@ static struct regulator_init_data __initdata max77686_ldo24_data = {
 	.consumer_supplies = max77686_ldo24_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo25_data = {
+static struct regulator_init_data  max77686_ldo25_data = {
 	.constraints = {
 		.name		= "VDDQ_LCD_1.8V",
 		.min_uV		= 1800000,
@@ -717,7 +717,7 @@ static struct regulator_init_data __initdata max77686_ldo25_data = {
 	.consumer_supplies = max77686_ldo25_consumer,
 };
 
-static struct regulator_init_data __initdata max77686_ldo26_data = {
+static struct regulator_init_data  max77686_ldo26_data = {
 	.constraints = {
 		.name		= "VDD_MOTOR_3.0V",
 		.min_uV		= 3000000,
@@ -827,11 +827,11 @@ enum fixed_regulator_id {
 };
 
 #if defined(CONFIG_VIDEO_SAMSUNG_S5P_HDMI)
-static struct regulator_consumer_supply __initdata hdmi_fixed_consumer[] = {
+static struct regulator_consumer_supply  hdmi_fixed_consumer[] = {
 	REGULATOR_SUPPLY("hdmi-en", "exynos4-hdmi"),
 };
 
-static struct regulator_init_data __initdata hdmi_fixed_voltage_init_data = {
+static struct regulator_init_data  hdmi_fixed_voltage_init_data = {
 	.constraints	= {
 		.name		= "hdmi_5v",
 		.valid_ops_mask = REGULATOR_CHANGE_STATUS,
@@ -840,7 +840,7 @@ static struct regulator_init_data __initdata hdmi_fixed_voltage_init_data = {
 	.consumer_supplies      = hdmi_fixed_consumer,
 };
 
-static struct fixed_voltage_config __initdata hdmi_fixed_voltage_config = {
+static struct fixed_voltage_config  hdmi_fixed_voltage_config = {
 	.supply_name	= "hdmi_en",
 	.microvolts	= 5000000,
 	.gpio		= 0,		/* FIXME : No GPIO candidated */
@@ -868,7 +868,7 @@ static struct usb3503_platform_data usb3503_pdata = {
 };
 #endif
 
-static struct i2c_board_info hkdk4412_i2c_devs0[] __initdata = {
+static struct i2c_board_info hkdk4412_i2c_devs0[]  = {
 	{
 		I2C_BOARD_INFO("max77686", (0x12 >> 1)),
 		.platform_data	= &hkdk4412_max77686_info,
@@ -881,7 +881,7 @@ static struct i2c_board_info hkdk4412_i2c_devs0[] __initdata = {
 #endif
 };
 
-static struct i2c_board_info hkdk4412_i2c_devs1[] __initdata = {
+static struct i2c_board_info hkdk4412_i2c_devs1[]  = {
 #if defined(CONFIG_SND_SOC_MAX98090)
 	{
 		I2C_BOARD_INFO("max98090", (0x20>>1)),
@@ -889,11 +889,11 @@ static struct i2c_board_info hkdk4412_i2c_devs1[] __initdata = {
 #endif
 };
 
-static struct i2c_board_info hkdk4412_i2c_devs3[] __initdata = {
+static struct i2c_board_info hkdk4412_i2c_devs3[]  = {
 	/* nothing here yet */
 };
 
-static struct i2c_board_info hkdk4412_i2c_devs7[] __initdata = {
+static struct i2c_board_info hkdk4412_i2c_devs7[]  = {
 	/* nothing here yet */
 };
 
@@ -955,7 +955,7 @@ static struct fb_videomode hkdk4412_lcd_timing = {
 	.yres		= 768,
 };
 
-static struct s3c_fb_platdata hkdk4412_fb_pdata __initdata = {
+static struct s3c_fb_platdata hkdk4412_fb_pdata  = {
 	.win[0]		= &hkdk4412_fb_win0,
 	.vtiming	= &hkdk4412_lcd_timing,
 	.vidcon0	= VIDCON0_VIDOUT_RGB | VIDCON0_PNRMODE_RGB,
@@ -1040,7 +1040,7 @@ static void __init hkdk4412_ohci_init(void)
 static struct s3c_hsotg_plat hkdk4412_hsotg_pdata;
 
 /* SDCARD */
-static struct s3c_sdhci_platdata hkdk4412_hsmmc2_pdata __initdata = {
+static struct s3c_sdhci_platdata hkdk4412_hsmmc2_pdata  = {
 	.max_width	= 4,
 	.host_caps	= MMC_CAP_4_BIT_DATA |
 			MMC_CAP_MMC_HIGHSPEED | MMC_CAP_SD_HIGHSPEED,
@@ -1067,7 +1067,7 @@ static struct dw_mci_board hkdk4412_dwmci_pdata = {
        .get_bus_wd             = hkdk4412_dwmci_get_bus_wd,
 };
 
-static struct platform_device *hkdk4412_devices[] __initdata = {
+static struct platform_device *hkdk4412_devices[]  = {
 	&s3c_device_hsmmc2,
 	&s3c_device_i2c0,
 	&s3c_device_i2c1,
