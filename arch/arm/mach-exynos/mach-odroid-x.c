@@ -134,7 +134,7 @@ static struct regulator_consumer_supply  max77686_ldo5_consumer[] = {
 static struct regulator_consumer_supply  max77686_ldo8_consumer[] = {
 	REGULATOR_SUPPLY("vdd", "exynos4-hdmi"),        /* HDMI */
 	REGULATOR_SUPPLY("vdd_pll", "exynos4-hdmi"),    /* HDMI */
-	REGULATOR_SUPPLY("vusb_d", "s3c-hsotg"),
+	REGULATOR_SUPPLY("vusb_a", "s3c-hsotg"), /* OTG */	        
 };
 
 static struct regulator_consumer_supply  max77686_ldo10_consumer[] = {
@@ -142,6 +142,10 @@ static struct regulator_consumer_supply  max77686_ldo10_consumer[] = {
 };
 
 static struct regulator_consumer_supply  max77686_ldo11_consumer[] = {
+};
+
+static struct regulator_consumer_supply  max77686_ldo12_consumer[] = {
+	REGULATOR_SUPPLY("vusb_d", "s3c-hsotg"), /* OTG */        
 };
 
 static struct regulator_consumer_supply  max77686_ldo13_consumer[] = {
@@ -503,6 +507,8 @@ static struct regulator_init_data  max77686_ldo12_data = {
 			.enabled = 1,
 		},
 	},
+	.num_consumer_supplies  = ARRAY_SIZE(max77686_ldo12_consumer),
+	.consumer_supplies      = max77686_ldo12_consumer,        
 };
 
 static struct regulator_init_data  max77686_ldo13_data = {
