@@ -861,17 +861,11 @@ static struct platform_device hdmi_fixed_voltage = {
 
 #if defined(CONFIG_USB_HSIC_USB3503)
 #include <linux/platform_data/usb3503.h>
-
-static int usb3503_reset_n(int reset)
-{
-	gpio_set_value(EXYNOS4_GPX3(5), reset);
-
-	return 0;
-}
-
 static struct usb3503_platform_data usb3503_pdata = {
-	.initial_mode	= USB3503_MODE_HUB,
-	.reset_n	= usb3503_reset_n,
+        .initial_mode   = USB3503_MODE_HUB,
+        .gpio_intn      = EXYNOS4_GPX3(0),
+        .gpio_connect   = EXYNOS4_GPX3(4),
+        .gpio_reset     = EXYNOS4_GPX3(5),
 };
 #endif
 
