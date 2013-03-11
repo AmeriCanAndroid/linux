@@ -23,7 +23,7 @@ else
     cleaning="";
 fi;
 
-make ARCH=arm shooter_u_defconfig
+make ARCH=arm odroidx2_android_emmc_defconfig
 make ARCH=arm CROSS_COMPILE=$tcloc/bin/arm-none-linux-gnueabi- zImage -j6
 make ARCH=arm CROSS_COMPILE=$tcloc/bin/arm-none-linux-gnueabi- modules -j6
 
