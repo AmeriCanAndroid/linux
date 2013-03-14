@@ -9,7 +9,7 @@ hn=`hostname`
 
 # evaluate warren or cope toolchain location
 if [ $hn = "ubuntu" ];
-    then tcloc="./toolchains/arm2010q1"; #cause warren is special
+    then tcloc="../../toolchains/gcc-linaro-arm-linux-gnueabihf-4.7-2013.01-20130125_linux"; #cause warren is special
     else tcloc="/root/CodeSourcery/Sourcery_G++_Lite"; #everyone else who installs to default locations
 fi ;
 
@@ -24,13 +24,13 @@ else
 fi;
 
 make ARCH=arm odroidx2_android_emmc_defconfig
-make ARCH=arm CROSS_COMPILE=$tcloc/bin/arm-none-linux-gnueabi- zImage -j6
-make ARCH=arm CROSS_COMPILE=$tcloc/bin/arm-none-linux-gnueabi- modules -j6
+make ARCH=arm -j6 CROSS_COMPILE=$tcloc/bin/arm-linux-gnueabihf- zImage
+make ARCH=arm -j6 CROSS_COMPILE=$tcloc/bin/arm-linux-gnueabihf- modules
 
 ./compiledcopy
 
-git log > ../compiled/currentrelease.txt
-tar cvzf ../"ACA_CarPC3.0-Kernel`date +"%m%d%y%H%M"`".tar.gz ../compiled/
+git log > ../../compiled/currentrelease.txt
+tar cvzf ../../"ACA_CarPC3.0-Kernel`date +"%m%d%y%H%M"`".tar.gz ../../compiled/
 
-if [ ! -e ../ACAKernels/ ]; then mkdir ../ACAKernels ]; fi;
-mv ../ACA_CarPC3.0* ../ACAKernels
+if [ ! -e ../../ACAKernelsCarPCV3/ ]; then mkdir ../../ACAKernelsCarPCV3 ]; fi;
+mv ../../ACA_CarPC3.0* ../../ACAKernelsCarPCV3
